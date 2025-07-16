@@ -83,7 +83,7 @@ def generate_manifest():
     manifest_data = []
     
     # Ensure the base URL correctly points to the root of your GitHub Pages site
-    base_url = f"https://{GITHUB_USERNAME}.github.io/{REPO_NAME}/"
+    base_url = f"https://github.com/{GITHUB_USERNAME}/{REPO_NAME}/blob/main/"
     
     # Global ID counter
     image_id_counter = 1
@@ -123,7 +123,7 @@ def generate_manifest():
             full_relative_image_path = os.path.join(IMAGE_DIR_RELATIVE_PATH, gender_folder_name, file_name).replace(os.sep, '/')
             
             # Construct the full public URL
-            image_url = os.path.join(base_url, 'blob/main', full_relative_image_path).replace(os.sep, '/')
+            image_url = os.path.join(base_url, full_relative_image_path, '?raw=true').replace(os.sep, '/')
 
             # Pick a name, ensuring no reuse until exhausted
             if current_shuffled_names:
